@@ -18,7 +18,7 @@
 mod handle;
 pub use handle::FixedBuf;
 
-mod buffers;
+pub mod buffers;
 pub(crate) use buffers::FixedBuffers;
 
 mod plumbing;
