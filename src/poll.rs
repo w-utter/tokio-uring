@@ -1403,6 +1403,12 @@ impl Events {
         self.inner.is_empty()
     }
 
+    /// pulls the raw epoll_event out of Events
+    #[cfg(target_os = "linux")]
+    pub fn as_mut_ptr(&self) -> *mut libc::epoll_event {
+        self.events.events.as_mut_ptr()
+    }
+
     /// Returns an iterator over the `Event` values.
     ///
     /// # Examples
